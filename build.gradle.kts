@@ -7,6 +7,7 @@ plugins {
 
 group = "com.github.KhalifaGad"
 version = "0.0.1-SNAPSHOT"
+val modelMapperVersion = "3.0.0"
 
 java {
     toolchain {
@@ -29,6 +30,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.modelmapper:modelmapper:${modelMapperVersion}")
 
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")

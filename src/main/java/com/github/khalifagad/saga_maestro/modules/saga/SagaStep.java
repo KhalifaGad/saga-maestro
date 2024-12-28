@@ -1,6 +1,7 @@
 package com.github.khalifagad.saga_maestro.modules.saga;
 
 import com.github.khalifagad.saga_maestro.modules.endpoint.Endpoint;
+import jakarta.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,9 +26,16 @@ public class SagaStep {
     private String id;
 
     private SagaStepExecutionType executionType = SagaStepExecutionType.SEQUENTIAL;
-    private SagaStepOnFailureOption onFailure = SagaStepOnFailureOption.ROLLBACK;
+    private SagaStepOnFailureOption onFailureAction = SagaStepOnFailureOption.ROLLBACK;
 
     @DBRef
     private Endpoint endpoint;
     private String endpointId;
+
+    @Nullable
+    @DBRef
+    private Endpoint rollbackEndpoint;
+
+    @Nullable
+    private String rollbackEndpointId;
 }
