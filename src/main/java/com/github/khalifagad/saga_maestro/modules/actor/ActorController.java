@@ -10,10 +10,10 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-public class ActorController {
+class ActorController {
     private final ActorService actorService;
 
-    public ActorController(ActorService actorService) {
+    ActorController(ActorService actorService) {
         this.actorService = actorService;
     }
 
